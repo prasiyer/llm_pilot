@@ -9,7 +9,8 @@ llama3_hf_token = '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'
 pipe = pipeline("text-generation", model="meta-llama/Meta-Llama-3-8B-Instruct", token = llama3_hf_token, device_map = "auto")
 call_count = 0
 
-text_file = "/home/vp899/projects/llm_pilot/Data/MAT1130_Context.txt"
+# text_file = "/home/vp899/projects/llm_pilot/Data/MAT1130_Context.txt"
+text_file = "/home/vp899/projects/llm_pilot/Data/MAT1130_Context_OAI.txt"
 # read the contents of text_file into str
 with open(text_file, 'r') as file:
     input_text = file.read()
@@ -18,6 +19,8 @@ system_prompt = "You are a helpful digital assistant.\
     You will provide clear answers in 3 sentences. Your main reference is the text included within triple quotes.At the beginning of each answer,\
         you will include the main json tag from the portion of the reference text that you are using for the answer.''' " +  input_text + " '''"
 
+system_prompt = "You are a helpful digital assistant.\
+    You will provide clear and concise answers. Your main reference is the text included within triple quotes. The text is about MAT1130 which is the CNH Engineering Standard for Hydraulic Tubes''' " +  input_text + " '''"
 
 def answer_function(message, chat_history):
     global call_count
