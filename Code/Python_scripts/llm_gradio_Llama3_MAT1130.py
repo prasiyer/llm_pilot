@@ -4,7 +4,7 @@ import random
 import transformers
 
 from transformers import pipeline
-llama3_hf_token = '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'
+llama3_hf_token = HF-TOKEN
 # pipe = pipeline("text-generation", model="meta-llama/Meta-Llama-3-8B-Instruct", token = llama3_hf_token, device=0)
 pipe = pipeline("text-generation", model="meta-llama/Meta-Llama-3-8B-Instruct", token = llama3_hf_token, device_map = "auto")
 call_count = 0
