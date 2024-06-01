@@ -4,7 +4,7 @@ import torch
 import transformers
 
 from transformers import pipeline
-llama3_hf_token = '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'
+llama3_hf_token = HF-TOKEN
 model_id = 'meta-llama/Meta-Llama-3-8B-Instruct'
 tokenizer = transformers.AutoTokenizer.from_pretrained(model_id)
 model = transformers.AutoModelForCausalLM.from_pretrained(model_id, torch_dtype=torch.bfloat16, device_map="auto", token = llama3_hf_token)
